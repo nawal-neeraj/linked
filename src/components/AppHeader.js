@@ -5,7 +5,7 @@ import { AppTheme } from '../Themes/AppThemes'
 export const AppHeader = ({ children }) => {
     return (
 
-        <Header style={{ backgroundColor: AppTheme.primary[400] }} translucent={false} androidStatusBarColor={AppTheme.primary[400]}>
+        <Header style={{ backgroundColor: AppTheme.primary[900] }} translucent={false} androidStatusBarColor={AppTheme.tertiary[700]}>
             {children}
         </Header>
     )

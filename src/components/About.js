@@ -3,11 +3,10 @@ import {Label, Text, View } from 'native-base';
 import { StyleSheet } from 'react-native';
 
 export const About = ({ aboutdata }) => {
-    
-    // useEffect(() => {
-    //     console.log("aboutdata", aboutdata)
-    // },[])
     const about = aboutdata.About
+    // useEffect(() => {
+    //     console.log(about)
+    // },[])
 
     return (
         <View>
@@ -19,7 +18,7 @@ export const About = ({ aboutdata }) => {
                     <Label>Name:</Label>
                 </View>
                 <View style={{ flex: 2 }}>
-                    <Text style={styles.textStyle}>{about.name}</Text>
+                    <Text style={styles.textStyle}>{about.name === undefined ? <Text> "...loading"</Text>: about.name}</Text>
                 </View>
             </View>
             <View style={{ flexDirection: "row" }}>
@@ -27,7 +26,7 @@ export const About = ({ aboutdata }) => {
                     <Label>Experiance:</Label>
                 </View>
                 <View style={{ flex: 2 }}>
-                    <Text style={styles.textStyle}>{about.Experience} years</Text>
+                    <Text style={styles.textStyle}>{about.Experience === undefined ? <Text> "...loading"</Text>: about.Experience} years</Text>
                 </View>
             </View>
         </View>

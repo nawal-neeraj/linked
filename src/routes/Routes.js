@@ -3,10 +3,16 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {
     createDrawerNavigator,
+    DrawerContentScrollView,
+    DrawerItem,
+    DrawerItemList,
   } from '@react-navigation/drawer';
+import RNExitApp from 'react-native-exit-app';
+
 
 import {Home} from '../screens/Home'
 import {Profile} from '../screens/Profile'
+
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -16,6 +22,7 @@ const Drawer = createDrawerNavigator();
     return (
       <Drawer.Navigator
         initialRouteName="Dashboard"
+        screenOptions={{ headerShown:false }}
         >
         <Drawer.Screen name="Dashboard" component={Home} />
         <Drawer.Screen name="Profile" component={Profile} />

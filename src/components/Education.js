@@ -3,10 +3,10 @@ import {Label, Text, View, Card } from 'native-base';
 import { StyleSheet } from 'react-native';
 
 export const Education = ({data}) => {
-    // useEffect(() => {
-    //     console.log(data)
-    // },[])
     const about = data.Education
+    // useEffect(() => {
+    //     console.log(about)
+    // },[])
 
     return (
         <View>
@@ -18,7 +18,7 @@ export const Education = ({data}) => {
                     <Label>Secondery:</Label>
                 </View>
                 <View style={{ flex: 2 }}>
-                    <Text style={styles.textStyle}>{about.Secondary}</Text>
+                    <Text style={styles.textStyle}>{about.Secondary === undefined ? <Text> "...loading"</Text> : about.Diploma}</Text>
                 </View>
             </View>
             <View style={{ flexDirection: "row", paddingBottom: 4 }}>
@@ -26,7 +26,7 @@ export const Education = ({data}) => {
                     <Label>Diploma:</Label>
                 </View>
                 <View style={{ flex: 2 }}>
-                    <Text style={styles.textStyle}>{about.Diploma}</Text>
+                    <Text style={styles.textStyle}>{about.Diploma === undefined ? <Text> "...loading"</Text>: about.Diploma}</Text>
                 </View>
             </View>
             <View style={{ flexDirection: "row", paddingBottom: 4 }}>
@@ -34,7 +34,7 @@ export const Education = ({data}) => {
                     <Label>Engineering:</Label>
                 </View>
                 <View style={{ flex: 2 }}>
-                    <Text style={styles.textStyle}>{about.Btech}</Text>
+                    <Text style={styles.textStyle}>{about.Btech === undefined ? <Text> "...loading"</Text>: about.Btech}</Text>
                 </View>
             </View>
         </View>
